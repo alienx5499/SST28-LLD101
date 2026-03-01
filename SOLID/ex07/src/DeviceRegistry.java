@@ -5,10 +5,29 @@ public class DeviceRegistry {
 
     public void add(SmartClassroomDevice d) { devices.add(d); }
 
-    public SmartClassroomDevice getFirstOfType(String simpleName) {
+    public <T> T getSingleByCapability(Class<T> capabilityType) {
+        T found = null;
         for (SmartClassroomDevice d : devices) {
-            if (d.getClass().getSimpleName().equals(simpleName)) return d;
+            if (capabilityType.isInstance(d)) {
+                if (found != null) {
+                    throw new IllegalStateException("Multiple devices implement " + capabilityType.getSimpleName());
+                }
+                found = capabilityType.cast(d);
+            }
         }
-        throw new IllegalStateException("Missing: " + simpleName);
+        if (found == null) {
+            throw new IllegalStateException("Missing device for " + capabilityType.getSimpleName());
+        }
+        return found;
+    }
+
+    public <T> List<T> getAllByCapability(Class<T> capabilityType) {
+        List<T> result = new ArrayList<>();
+        for (SmartClassroomDevice d : devices) {
+            if (capabilityType.isInstance(d)) {
+                result.add(capabilityType.cast(d));
+            }
+        }
+        return result;
     }
 }
