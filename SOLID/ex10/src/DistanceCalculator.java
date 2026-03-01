@@ -1,4 +1,8 @@
-public class DistanceCalculator {
+public interface DistanceCalculator {
+    double km(GeoPoint a, GeoPoint b);
+}
+
+class DefaultDistanceCalculator implements DistanceCalculator {
     public double km(GeoPoint a, GeoPoint b) {
         // fake distance: rough Manhattan on scaled degrees for determinism
         double d = Math.abs(a.lat - b.lat) + Math.abs(a.lon - b.lon);
