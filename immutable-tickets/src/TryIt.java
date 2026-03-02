@@ -1,7 +1,6 @@
 import com.example.tickets.IncidentTicket;
 import com.example.tickets.TicketService;
-
-import java.util.List;
+import java.util.*;
 
 /**
  * Starter demo that shows why mutability is risky.
@@ -20,14 +19,15 @@ public class TryIt {
         System.out.println("Created: " + t);
 
         // Demonstrate post-creation mutation through service
-        service.assign(t, "agent@example.com");
-        service.escalateToCritical(t);
-        System.out.println("\nAfter service mutations: " + t);
+        IncidentTicket assigned = service.assign(t, "agent@example.com");
+        IncidentTicket escalated = service.escalateToCritical(assigned);
+        System.out.println("\nAfter service updates (new instances): " + escalated);
 
         // Demonstrate external mutation via leaked list reference
-        List<String> tags = t.getTags();
-        tags.add("HACKED_FROM_OUTSIDE");
-        System.out.println("\nAfter external tag mutation: " + t);
+        List<String> externalTags = new ArrayList<>(escalated.getTags());
+        externalTags.add("HACKED_FROM_OUTSIDE");
+        System.out.println("\nExternal tags list mutated: " + externalTags);
+        System.out.println("Ticket tags remain: " + escalated.getTags());
 
         // Starter compiles; after refactor, you should redesign updates to create new objects instead.
     }
