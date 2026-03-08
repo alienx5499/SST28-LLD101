@@ -6,7 +6,7 @@ package com.example.reports;
  * - Expensive load happens every time display() is called
  * - No access control
  *
- * TODO (student):
+ * DONE (student):
  * - Convert this into the RealSubject behind a Proxy, or replace with RealReport.
  */
 public class ReportFile {
