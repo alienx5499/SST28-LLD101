@@ -32,4 +32,3 @@ public class FakePaymentGateway implements PaymentGateway {
     return alwaysSuccess;
   }
 }
-

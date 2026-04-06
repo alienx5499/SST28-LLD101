@@ -30,4 +30,3 @@ public class InMemorySeatLockRepository implements SeatLockRepository {
     return locksById.remove(lockId);
   }
 }
-

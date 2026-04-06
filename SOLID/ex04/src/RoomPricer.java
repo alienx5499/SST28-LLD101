@@ -1,3 +1,3 @@
 public interface RoomPricer {
-    double getBaseMonthly(int roomType);
+  double getBaseMonthly(int roomType);
 }

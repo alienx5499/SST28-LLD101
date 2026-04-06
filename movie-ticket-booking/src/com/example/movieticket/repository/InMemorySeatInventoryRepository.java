@@ -116,11 +116,7 @@ public class InMemorySeatInventoryRepository implements SeatInventoryRepository 
 
   @Override
   public void confirmLock(
-      String showId,
-      List<String> seatIds,
-      String lockId,
-      String bookingId,
-      Instant now) {
+      String showId, List<String> seatIds, String lockId, String bookingId, Instant now) {
     if (now == null) {
       throw new IllegalArgumentException("now");
     }
@@ -275,4 +271,3 @@ public class InMemorySeatInventoryRepository implements SeatInventoryRepository 
     }
   }
 }
-

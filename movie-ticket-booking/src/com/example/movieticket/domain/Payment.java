@@ -9,7 +9,12 @@ public class Payment {
   private PaymentStatus status;
   private final Instant createdAt;
 
-  public Payment(String paymentId, String bookingId, long amountCents, PaymentStatus status, Instant createdAt) {
+  public Payment(
+      String paymentId,
+      String bookingId,
+      long amountCents,
+      PaymentStatus status,
+      Instant createdAt) {
     if (paymentId == null || paymentId.isBlank()) {
       throw new IllegalArgumentException("paymentId");
     }
@@ -61,7 +66,14 @@ public class Payment {
 
   @Override
   public String toString() {
-    return "Payment{paymentId='" + paymentId + "', bookingId='" + bookingId + "', amountCents=" + amountCents + ", status=" + status + "}";
+    return "Payment{paymentId='"
+        + paymentId
+        + "', bookingId='"
+        + bookingId
+        + "', amountCents="
+        + amountCents
+        + ", status="
+        + status
+        + "}";
   }
 }
-

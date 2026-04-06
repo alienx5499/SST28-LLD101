@@ -43,11 +43,9 @@ public class SeatPricingCalculator {
         throw new IllegalArgumentException("Unknown seatId: " + seatId);
       }
       long base = pricingPolicy.basePriceCents(category);
-      long seatPrice =
-          (long) Math.round(base * timeMultiplier * demandMultiplier);
+      long seatPrice = (long) Math.round(base * timeMultiplier * demandMultiplier);
       total += seatPrice;
     }
     return total;
   }
 }
-

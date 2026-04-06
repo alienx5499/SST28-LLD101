@@ -101,4 +101,3 @@ public class PricingPolicy {
     return surgeHighMultiplier;
   }
 }
-

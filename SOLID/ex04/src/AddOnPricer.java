@@ -1,3 +1,3 @@
 public interface AddOnPricer {
-    double getPrice(AddOn a);
+  double getPrice(AddOn a);
 }

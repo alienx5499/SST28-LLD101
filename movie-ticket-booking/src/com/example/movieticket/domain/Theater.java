@@ -37,4 +37,3 @@ public class Theater {
     return "Theater{theaterId='" + theaterId + "', name='" + name + "', city='" + city + "'}";
   }
 }
-

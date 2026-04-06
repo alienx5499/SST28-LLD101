@@ -30,4 +30,3 @@ public class DemandBasedPricingRule {
     return pricingPolicy.getSurgeHighMultiplier();
   }
 }
-

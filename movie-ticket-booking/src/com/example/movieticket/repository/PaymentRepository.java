@@ -10,4 +10,3 @@ public interface PaymentRepository {
 
   Collection<Payment> findAll();
 }
-

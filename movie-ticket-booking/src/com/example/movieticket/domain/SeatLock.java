@@ -84,4 +84,3 @@ public class SeatLock {
     return "SeatLock{lockId='" + lockId + "', showId='" + showId + "', seats=" + seatIds + "}";
   }
 }
-

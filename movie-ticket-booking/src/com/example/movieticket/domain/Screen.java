@@ -34,7 +34,12 @@ public class Screen {
 
   @Override
   public String toString() {
-    return "Screen{screenId='" + screenId + "', theaterId='" + theaterId + "', name='" + name + "'}";
+    return "Screen{screenId='"
+        + screenId
+        + "', theaterId='"
+        + theaterId
+        + "', name='"
+        + name
+        + "'}";
   }
 }
-

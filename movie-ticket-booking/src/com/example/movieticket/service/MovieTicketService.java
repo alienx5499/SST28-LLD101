@@ -164,11 +164,11 @@ public class MovieTicketService {
     long amountCents = seatLock.getTotalPriceCents();
 
     String bookingId = UUID.randomUUID().toString();
-    Booking booking = new Booking(bookingId, seatLock.getShowId(), seatLock.getSeatIds(), amountCents, now);
+    Booking booking =
+        new Booking(bookingId, seatLock.getShowId(), seatLock.getSeatIds(), amountCents, now);
 
     String paymentId = UUID.randomUUID().toString();
-    Payment payment =
-        new Payment(paymentId, bookingId, amountCents, PaymentStatus.INITIATED, now);
+    Payment payment = new Payment(paymentId, bookingId, amountCents, PaymentStatus.INITIATED, now);
     paymentRepository.save(payment);
 
     boolean success = paymentGateway.pay(paymentId, amountCents, paymentMethod);
@@ -292,4 +292,3 @@ public class MovieTicketService {
     seatInventoryRepository.initializeShow(updated);
   }
 }
-

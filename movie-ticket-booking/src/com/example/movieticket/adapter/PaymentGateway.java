@@ -5,4 +5,3 @@ public interface PaymentGateway {
 
   boolean refund(String paymentId, long amountCents);
 }
-

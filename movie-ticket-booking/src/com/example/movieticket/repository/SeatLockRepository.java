@@ -10,4 +10,3 @@ public interface SeatLockRepository {
 
   SeatLock remove(String lockId);
 }
-

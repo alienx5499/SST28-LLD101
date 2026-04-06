@@ -12,4 +12,3 @@ public interface ScreenRepository {
 
   Collection<Screen> findAll();
 }
-

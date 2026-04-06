@@ -30,4 +30,3 @@ public class InMemoryBookingRepository implements BookingRepository {
     return bookingsById.remove(bookingId);
   }
 }
-

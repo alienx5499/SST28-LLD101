@@ -28,4 +28,3 @@ public class Movie {
     return "Movie{movieId='" + movieId + "', title='" + title + "'}";
   }
 }
-

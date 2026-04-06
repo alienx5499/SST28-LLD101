@@ -86,7 +86,14 @@ public class Booking {
 
   @Override
   public String toString() {
-    return "Booking{bookingId='" + bookingId + "', showId='" + showId + "', seats=" + seatIds + ", status=" + status + "}";
+    return "Booking{bookingId='"
+        + bookingId
+        + "', showId='"
+        + showId
+        + "', seats="
+        + seatIds
+        + ", status="
+        + status
+        + "}";
   }
 }
-

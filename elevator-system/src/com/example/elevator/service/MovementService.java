@@ -92,14 +92,12 @@ public class MovementService {
       scheduler.shutdownNow();
     }
 
-
     for (Elevator elevator : elevatorService.getAllElevators(buildingId)) {
       elevator.setActive(false);
       elevator.setDirection(Direction.IDLE);
       elevator.setState(ElevatorState.STOPPED);
       elevator.setStateHandler(new com.example.elevator.domain.state.StoppedState());
       elevatorService.saveElevator(elevator);
-
 
       elevator.openDoors();
       elevatorService.saveElevator(elevator);

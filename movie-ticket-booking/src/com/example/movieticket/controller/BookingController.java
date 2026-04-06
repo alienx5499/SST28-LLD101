@@ -47,4 +47,3 @@ public class BookingController {
     return movieTicketService.cancelBooking(bookingId, now);
   }
 }
-

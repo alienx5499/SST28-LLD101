@@ -10,4 +10,3 @@ public interface BookingRepository {
 
   Booking remove(String bookingId);
 }
-

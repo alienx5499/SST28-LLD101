@@ -21,7 +21,8 @@ public class App {
     PaymentRepository paymentRepository = new InMemoryPaymentRepository();
 
     PaymentGateway paymentGateway = new FakePaymentGateway(true);
-    SeatPricingCalculator seatPricingCalculator = new SeatPricingCalculator(seatInventoryRepository);
+    SeatPricingCalculator seatPricingCalculator =
+        new SeatPricingCalculator(seatInventoryRepository);
 
     MovieTicketService service =
         new MovieTicketService(
@@ -53,17 +54,7 @@ public class App {
     base.put(SeatCategory.GOLD, 850);
     base.put(SeatCategory.PLATINUM, 1200);
 
-    PricingPolicy pricingPolicy =
-        new PricingPolicy(
-            base,
-            18,
-            21,
-            1.4,
-            1.0,
-            1.2,
-            1.0,
-            1.2,
-            1.5);
+    PricingPolicy pricingPolicy = new PricingPolicy(base, 18, 21, 1.4, 1.0, 1.2, 1.0, 1.2, 1.5);
 
     Map<String, SeatCategory> seatLayout = new LinkedHashMap<>();
     seatLayout.put("A1", SeatCategory.SILVER);
@@ -79,8 +70,7 @@ public class App {
     Instant startTime = now.plusSeconds(3600);
 
     Show show =
-        new Show(
-            showId, movieId, theaterId, screenId, startTime, seatLayout, pricingPolicy);
+        new Show(showId, movieId, theaterId, screenId, startTime, seatLayout, pricingPolicy);
     admin.upsertShow(show);
 
     List<String> seatIds = List.of("A3", "A4");
@@ -92,4 +82,3 @@ public class App {
     System.out.println(cancelled);
   }
 }
-

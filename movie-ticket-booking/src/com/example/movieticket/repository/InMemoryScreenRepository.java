@@ -41,4 +41,3 @@ public class InMemoryScreenRepository implements ScreenRepository {
     return Collections.unmodifiableCollection(screensById.values());
   }
 }
-

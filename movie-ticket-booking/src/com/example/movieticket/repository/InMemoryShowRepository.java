@@ -55,4 +55,3 @@ public class InMemoryShowRepository implements ShowRepository {
     return Collections.unmodifiableCollection(showsById.values());
   }
 }
-

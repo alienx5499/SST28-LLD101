@@ -27,4 +27,3 @@ public class InMemoryPaymentRepository implements PaymentRepository {
     return Collections.unmodifiableCollection(paymentsById.values());
   }
 }
-

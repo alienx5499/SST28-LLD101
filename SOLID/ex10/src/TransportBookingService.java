@@ -1,33 +1,34 @@
 public class TransportBookingService {
 
-    private final DistanceCalculator distanceCalculator;
-    private final DriverAllocator driverAllocator;
-    private final PaymentGateway paymentGateway;
-    private final FareCalculator fareCalculator;
+  private final DistanceCalculator distanceCalculator;
+  private final DriverAllocator driverAllocator;
+  private final PaymentGateway paymentGateway;
+  private final FareCalculator fareCalculator;
 
-    public TransportBookingService(DistanceCalculator distanceCalculator,
-                                   DriverAllocator driverAllocator,
-                                   PaymentGateway paymentGateway,
-                                   FareCalculator fareCalculator) {
-        this.distanceCalculator = distanceCalculator;
-        this.driverAllocator = driverAllocator;
-        this.paymentGateway = paymentGateway;
-        this.fareCalculator = fareCalculator;
-    }
+  public TransportBookingService(
+      DistanceCalculator distanceCalculator,
+      DriverAllocator driverAllocator,
+      PaymentGateway paymentGateway,
+      FareCalculator fareCalculator) {
+    this.distanceCalculator = distanceCalculator;
+    this.driverAllocator = driverAllocator;
+    this.paymentGateway = paymentGateway;
+    this.fareCalculator = fareCalculator;
+  }
 
-    public void book(TripRequest req) {
-        double km = distanceCalculator.km(req.from, req.to);
-        System.out.println("DistanceKm=" + km);
+  public void book(TripRequest req) {
+    double km = distanceCalculator.km(req.from, req.to);
+    System.out.println("DistanceKm=" + km);
 
-        String driver = driverAllocator.allocate(req.studentId);
-        System.out.println("Driver=" + driver);
+    String driver = driverAllocator.allocate(req.studentId);
+    System.out.println("Driver=" + driver);
 
-        double fare = fareCalculator.calculate(km);
+    double fare = fareCalculator.calculate(km);
 
-        String txn = paymentGateway.charge(req.studentId, fare);
-        System.out.println("Payment=PAID txn=" + txn);
+    String txn = paymentGateway.charge(req.studentId, fare);
+    System.out.println("Payment=PAID txn=" + txn);
 
-        BookingReceipt r = new BookingReceipt("R-501", fare);
-        System.out.println("RECEIPT: " + r.id + " | fare=" + String.format("%.2f", r.fare));
-    }
+    BookingReceipt r = new BookingReceipt("R-501", fare);
+    System.out.println("RECEIPT: " + r.id + " | fare=" + String.format("%.2f", r.fare));
+  }
 }

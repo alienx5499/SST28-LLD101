@@ -1,5 +1,5 @@
 package com.example.reports;
 
 public interface Report {
-    void display(User user);
+  void display(User user);
 }

@@ -12,4 +12,3 @@ public interface TheaterRepository {
 
   Collection<Theater> findAll();
 }
-

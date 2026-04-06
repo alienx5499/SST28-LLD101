@@ -34,4 +34,3 @@ public class AdminController {
     movieTicketService.updatePricingPolicy(showId, pricingPolicy);
   }
 }
-

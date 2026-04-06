@@ -41,4 +41,3 @@ public class InMemoryTheaterRepository implements TheaterRepository {
     return Collections.unmodifiableCollection(theatersById.values());
   }
 }
-

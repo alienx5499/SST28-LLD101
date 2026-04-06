@@ -44,4 +44,3 @@ public class TimeBasedPricingRule {
     return pricingPolicy.getOffTimeMultiplier();
   }
 }
-

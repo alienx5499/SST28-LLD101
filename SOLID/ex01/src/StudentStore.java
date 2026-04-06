@@ -1,4 +1,5 @@
 public interface StudentStore {
-    void save(StudentRecord r);
-    int count();
+  void save(StudentRecord r);
+
+  int count();
 }

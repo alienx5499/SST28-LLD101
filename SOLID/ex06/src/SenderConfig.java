@@ -1,4 +1,4 @@
 // Smell: unused config object.
 public class SenderConfig {
-    public int maxLen = 160;
+  public int maxLen = 160;
 }

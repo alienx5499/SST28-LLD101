@@ -1,3 +1,3 @@
 public interface EligibilityRule {
-    String check(StudentProfile s);
+  String check(StudentProfile s);
 }

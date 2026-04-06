@@ -10,4 +10,3 @@ public interface MovieRepository {
 
   Collection<Movie> findAll();
 }
-

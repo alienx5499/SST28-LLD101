@@ -14,4 +14,3 @@ public interface ShowRepository {
 
   Collection<Show> findAll();
 }
-

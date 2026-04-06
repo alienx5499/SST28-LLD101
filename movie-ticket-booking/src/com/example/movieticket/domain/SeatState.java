@@ -5,4 +5,3 @@ public enum SeatState {
   LOCKED,
   BOOKED
 }
-

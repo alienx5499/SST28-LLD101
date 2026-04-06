@@ -17,7 +17,8 @@ public interface SeatInventoryRepository {
       Instant now,
       long ttlSeconds);
 
-  void confirmLock(String showId, List<String> seatIds, String lockId, String bookingId, Instant now);
+  void confirmLock(
+      String showId, List<String> seatIds, String lockId, String bookingId, Instant now);
 
   void releaseLock(String showId, List<String> seatIds, String lockId, Instant now);
 
@@ -29,4 +30,3 @@ public interface SeatInventoryRepository {
 
   void purgeExpiredLocks(String showId, Instant now);
 }
-

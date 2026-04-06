@@ -1,3 +1,5 @@
 public enum AddOn {
-    MESS, LAUNDRY, GYM
+  MESS,
+  LAUNDRY,
+  GYM
 }

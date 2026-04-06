@@ -1,5 +1,5 @@
 package com.example.payments;
 
 public interface PaymentGateway {
-    String charge(String customerId, int amountCents);
+  String charge(String customerId, int amountCents);
 }

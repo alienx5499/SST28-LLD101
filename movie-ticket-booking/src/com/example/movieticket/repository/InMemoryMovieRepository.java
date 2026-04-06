@@ -27,4 +27,3 @@ public class InMemoryMovieRepository implements MovieRepository {
     return Collections.unmodifiableCollection(moviesById.values());
   }
 }
-
